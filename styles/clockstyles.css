@@ -1,0 +1,69 @@
+main {
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	display: flex;
+}
+
+.analog-clock {
+	max-width: 10rem;
+	max-height: 10rem;
+	border: 5px solid black;
+	border-radius: 50%;
+	margin: 50px auto;
+	position: relative;
+	display: flex;
+	flex: 1 1 auto;
+}
+
+.clock-face {
+	position: relative;
+	background-image: url("./assets/clockface.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: flex;
+	flex: 1 1 auto;
+}
+
+.clock-face::after {
+	content: "";
+	position: absolute;
+	background-color: black;
+	z-index: 15;
+	top: 50%;
+	left: 50%;
+	width: 18px;
+	height: 18px;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+}
+
+.hand {
+	--rotation: 0;
+	position: absolute;
+	transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+	bottom: 50%;
+	left: 50%;
+	transform-origin: bottom;
+	background-color: black;
+	z-index: 10;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.second-hand {
+	width: 0.5%;
+	height: 48%;
+	background-color: red;
+}
+
+.minute-hand {
+	width: 2%;
+	height: 50%;
+}
+
+.hour-hand {
+	width: 5%;
+	height: 30%;
+}
