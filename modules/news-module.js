@@ -1,22 +1,21 @@
 import { URLs } from "../config.js";
 // ^^ put own error handling server here ^^
 
-let newsContainer = document.querySelector('.container')
+let newsContainer = document.querySelector(".container");
 
 var requestOptions = {
 	method: "GET",
 	redirect: "follow",
 };
 
-export const newsUpdate = (callback) => {
-
+export const newsUpdate = () => {
 	fetch(URLs.news, requestOptions)
 		.then((response) => response.json())
-		.then((result) => callback(result))
+		.then((result) => placeNewsOnPage(result))
 		.catch((error) => console.log("error", error));
 };
 
-newsUpdate((res) => {
+const placeNewsOnPage = (res) => {
 	res.articles.forEach((article) => {
 		let newsList = document.createElement("ol");
 		let newsItems = document.createElement("li");
@@ -49,4 +48,4 @@ newsUpdate((res) => {
 		newsList.append(newsItems);
 		newsContainer.append(newsList);
 	});
-});
+};
