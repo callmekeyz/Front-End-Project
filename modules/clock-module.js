@@ -23,7 +23,7 @@ export const runClock = () => {
 		rotateHands(hourHand, hoursPercent);
 	}
 
-	if (hours > 12) {
+	if (hours >= 12) {
 		hours -= 12;
 		am_pm = "PM";
 	}
