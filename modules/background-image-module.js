@@ -1,15 +1,12 @@
 import { ajax } from "../modules/ajax-module.js";
 
-let randomGeneratedImageID = Math.floor(Math.random() * 101);
+const mainTag = document.querySelector("main");
 
-export const backgroundImage = ajax(
-	`https://picsum.photos/id/${randomGeneratedImageID}/info`,
-	(r) => {
+//Turned this into a function call that is hooked up to a listener on the main JS page. Want to ensure that people only smaller screens don't use their data on this ajax call
+export const backgroundImage = function () {
+	let randomGeneratedImageID = Math.floor(Math.random() * 101);
+	ajax(`https://picsum.photos/id/${randomGeneratedImageID}/info`, (r) => {
 		let resultsArray = JSON.parse(r);
-		console.log(resultsArray);
-		const imageSection = document.querySelector(".image-section");
-		const newImage = document.createElement("img");
-		newImage.src = resultsArray.download_url;
-		imageSection.appendChild(newImage);
-	}
-);
+		mainTag.style.backgroundImage = `url(${resultsArray.download_url})`;
+	});
+};

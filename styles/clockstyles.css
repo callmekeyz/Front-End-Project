@@ -1,26 +1,33 @@
 main {
 	height: 100vh;
 	width: 100vw;
-	overflow: hidden;
-	display: flex;
+	display: grid;
+	grid-template-areas:
+		"quotes"
+		"clocks"
+		"news";
+	gap: 10%;
+	padding: 5%;
 }
 
 .clocks {
 	display: grid;
+	justify-items: center;
 	grid-template-areas:
 		"clock"
 		"switch";
 	grid-template-columns: 1fr;
 	margin: 0;
 	padding: 0;
-	width: 500px;
+	grid-area: clocks;
+	background: grey;
+	opacity: 0.7;
 }
 .analog-clock {
 	width: 10rem;
 	height: 10rem;
 	border: 5px solid black;
 	border-radius: 50%;
-	margin: 50px auto 0;
 	position: relative;
 	display: flex;
 	flex: 1 1 auto;
@@ -30,8 +37,12 @@ main {
 .digital-clock {
 	grid-area: clock;
 	justify-self: center;
-	margin: 50px auto 0;
 	padding: 0;
+	font-family: "Orbitron", sans-serif;
+	font-size: 46px;
+	color: rgb(6, 136, 49);
+	background: black;
+	text-align: center;
 }
 
 .clock-face {
@@ -88,14 +99,14 @@ main {
 
 /* Toggle from W3 */
 /* The switch - the box around the slider  */
+.toggle-container {
+	grid-area: switch;
+}
 .toggle-switch {
 	position: relative;
 	display: inline-block;
 	width: 60px;
 	height: 34px;
-	grid-area: switch;
-	left: 40%;
-	bottom: 70%;
 }
 
 /* Hide default HTML checkbox */
@@ -142,4 +153,15 @@ input:checked + .slider:before {
 	-webkit-transform: translateX(26px);
 	-ms-transform: translateX(26px);
 	transform: translateX(26px);
+}
+.quote-section {
+	background: grey;
+	opacity: 0.7;
+	grid-area: quotes;
+}
+
+.headline-news {
+	background: grey;
+	opacity: 0.7;
+	grid-area: news;
 }
