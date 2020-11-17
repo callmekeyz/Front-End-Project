@@ -1,24 +1,22 @@
-.refresh-quote{
-    display:flex;
-    justify-content: center;
+.refresh-quote {
+	display: flex;
+	justify-content: center;
 }
-.quote-section{
-font-size: 20px;
-font-family: cursive;
-border-radius: 10px;
-border: solid black 1px;
-padding: 10px;
-box-shadow: 5px 5px 8px teal,10px 10px 8px pink,15px 15px 8px blue;
-
+.quote-section {
+	font-size: 20px;
+	font-family: cursive;
+	border-radius: 10px;
+	border: solid black 1px;
+	padding: 10px;
+	box-shadow: 5px 5px 8px teal, 10px 10px 8px pink, 15px 15px 8px blue;
 }
-#quote-paragraph{
-text-align: center;
-;
+#quote-paragraph {
+	text-align: center;
 }
-#author-name{
-text-align: center;
-text-decoration: underline;
-font-size: 20px;
-color:blue;
-font-weight: bolder;
+#author-name {
+	text-align: center;
+	text-decoration: underline;
+	font-size: 20px;
+	color: blue;
+	font-weight: bolder;
 }
