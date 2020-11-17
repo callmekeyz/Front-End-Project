@@ -1,10 +1,10 @@
 import { ajax } from "../modules/ajax-module.js";
-import { URL } from "./../config.js";
+import { URLs } from "./../config.js";
 
 const quoteSection = document.querySelector(".quote-section");
 //Using a function to make the AJAX call. Need this to hook up the refresh button
 export let newQuote = () => {
-	ajax(URL.quote, (r) => {
+	ajax(URLs.quote, (r) => {
 		let randomQuote = JSON.parse(r);
 		let currentQuote = randomQuote.quote.quoteText;
 		let currentQuoteAuthor = randomQuote.quote.quoteAuthor;
