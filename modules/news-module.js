@@ -4,9 +4,6 @@ import {URLs} from "../config.js"
 
 let newsContainer = document.querySelector('.container')
 
-
-// ^^ put own error handling server here ^^
-
 let body = document.querySelector("body");
 
 var requestOptions = {
@@ -51,24 +48,13 @@ newsUpdate(res => {
         newsItems.append(newsTitle)
         newsItems.append(imgDiv)
         imgDiv.append(newsImg)
-        // newsItems.append(newsImg)
         newsItems.append(newsDescription)
         newsItems.append(newsAnchor)
         newsList.append(newsItems)
         newsContainer.append(newsList) 
     })
-    console.log('Look at me!')
+
 })
 
 
 let button = document.querySelector(".news");
-// button.addEventListener('click', () => {
-//     newsUpdate(res => {
-//         res.articles.forEach (article => {
-
-//         })
-//         console.log('Look at me!')
-//     })
-
-// console.log(await newsUpdate())
-// })
