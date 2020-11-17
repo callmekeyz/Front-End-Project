@@ -173,6 +173,7 @@ input:checked + .slider:before {
 	background: grey;
 	opacity: 0.7;
 	grid-area: news;
+	overflow: auto;
 }
 
 @media only screen and (min-width: 768px) {

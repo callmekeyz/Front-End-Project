@@ -2,6 +2,7 @@ import { runClock } from "./modules/clock-module.js";
 import { generateAnImage } from "./modules/gradient-module.js";
 import { backgroundImage } from "./modules/background-image-module.js";
 import { newQuote } from "./modules/quote.js";
+import { newsUpdate } from "./modules/news-module.js"
 
 const toggleWhichClock = document.querySelector(".toggle-switch");
 const analogClock = document.querySelector(".analog-clock");
@@ -12,6 +13,7 @@ const toggleLabel = document.querySelector(".toggle-label");
 
 setInterval(runClock, 1000);
 newQuote();
+newsUpdate(); 
 if (windowsScreenSize.matches) {
 	backgroundImage();
 }
