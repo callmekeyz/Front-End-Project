@@ -1,4 +1,5 @@
 import { ajax } from "../modules/ajax-module.js";
+import { URL } from "../config.js";
 
 const mainTag = document.querySelector("main");
 
@@ -10,7 +11,3 @@ export const backgroundImage = function () {
 		mainTag.style.backgroundImage = `url(${resultsArray.download_url})`;
 	});
 };
-
-// // const URL = {
-// // 	backgroundImage: `https://picsum.photos/id/`,
-// }; // this to config file

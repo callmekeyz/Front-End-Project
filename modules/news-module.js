@@ -1,11 +1,18 @@
+
 import {URLs} from "../config.js"
 // ^^ put own error handling server here ^^
 
 let newsContainer = document.querySelector('.container')
+
+
+// ^^ put own error handling server here ^^
+
+let body = document.querySelector("body");
+
 var requestOptions = {
-    method: 'GET',
-    redirect: 'follow'
-  };
+	method: "GET",
+	redirect: "follow",
+};
 
 export const newsUpdate = (callback) => {
     fetch(URLs.news, requestOptions)
@@ -53,15 +60,15 @@ newsUpdate(res => {
     console.log('Look at me!')
 })
 
-let button = document.querySelector('.news')
+
+let button = document.querySelector(".news");
 // button.addEventListener('click', () => {
 //     newsUpdate(res => {
 //         res.articles.forEach (article => {
-            
+
 //         })
 //         console.log('Look at me!')
 //     })
-    
-    // console.log(await newsUpdate())
-// })
 
+// console.log(await newsUpdate())
+// })

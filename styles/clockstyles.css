@@ -11,17 +11,19 @@ main {
 }
 
 .clocks {
+	grid-area: clocks;
 	display: grid;
 	justify-items: center;
 	grid-template-areas:
 		"clock"
 		"switch";
-	grid-template-columns: 1fr;
 	margin: 0;
 	padding: 0;
-	grid-area: clocks;
-	background: grey;
+	background: black;
 	opacity: 0.7;
+	border: solid;
+	box-shadow: 20px 20px 45px 10px black;
+	border-radius: 15px;
 }
 .analog-clock {
 	width: 10rem;
@@ -36,10 +38,10 @@ main {
 
 .digital-clock {
 	grid-area: clock;
-	justify-self: center;
-	padding: 0;
-	font-family: "Orbitron", sans-serif;
-	font-size: 46px;
+	margin: 5px;
+	padding: 2px;
+	font-family: "Roboto Mono", monospace;
+	font-size: 33px;
 	color: rgb(6, 136, 49);
 	background: black;
 	text-align: center;
@@ -54,11 +56,18 @@ main {
 	display: flex;
 	flex: 1 1 auto;
 }
+.toggle-label {
+	color: white;
+}
+.clock-face {
+	filter: contrast(5000%);
+	filter: brightness(1000%);
+}
 
 .clock-face::after {
 	content: "";
 	position: absolute;
-	background-color: black;
+	background-color: grey;
 	z-index: 15;
 	top: 50%;
 	left: 50%;
@@ -75,7 +84,7 @@ main {
 	bottom: 50%;
 	left: 50%;
 	transform-origin: bottom;
-	background-color: black;
+	background-color: grey;
 	z-index: 10;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
@@ -83,13 +92,13 @@ main {
 
 .second-hand {
 	width: 0.5%;
-	height: 48%;
+	height: 43%;
 	background-color: red;
 }
 
 .minute-hand {
 	width: 2%;
-	height: 50%;
+	height: 40%;
 }
 
 .hour-hand {
@@ -124,7 +133,7 @@ main {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #2196f3;
+	background-color: #333;
 	-webkit-transition: 0.4s;
 	transition: 0.4s;
 }
@@ -136,17 +145,17 @@ main {
 	width: 26px;
 	left: 4px;
 	bottom: 4px;
-	background-color: white;
+	background-color: #ccc;
 	-webkit-transition: 0.4s;
 	transition: 0.4s;
 }
 
 input:checked + .slider {
-	background-color: #2196f3;
+	background-color: #333;
 }
 
 input:focus + .slider {
-	box-shadow: 0 0 1px #2196f3;
+	box-shadow: 0 0 1px #333;
 }
 
 input:checked + .slider:before {
@@ -165,4 +174,12 @@ input:checked + .slider:before {
 	opacity: 0.7;
 	grid-area: news;
 	overflow: auto;
+}
+
+@media only screen and (min-width: 768px) {
+	main {
+		grid-template-areas:
+			"quotes"
+			"clocks news";
+	}
 }

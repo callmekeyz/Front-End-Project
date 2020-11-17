@@ -1,9 +1,10 @@
 import { ajax } from "../modules/ajax-module.js";
+import { URL } from "./../config.js";
 
 const quoteSection = document.querySelector(".quote-section");
 //Using a function to make the AJAX call. Need this to hook up the refresh button
 export let newQuote = () => {
-	ajax("https://quote-garden.herokuapp.com/api/v2/quotes/random", (r) => {
+	ajax(URL.quote, (r) => {
 		let randomQuote = JSON.parse(r);
 		let currentQuote = randomQuote.quote.quoteText;
 		let currentQuoteAuthor = randomQuote.quote.quoteAuthor;
@@ -27,7 +28,7 @@ const appendQuoteToDOM = (quote, author) => {
 	p.id = "quote-paragraph";
 	p.append(quote);
 	div.append(p);
-	quoteSection.append(div);
+	quoteSection.prepend(div);
 
 	let authorEL = document.createElement("h6");
 	authorEL.id = "author-name";
