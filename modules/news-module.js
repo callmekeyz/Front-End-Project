@@ -1,13 +1,13 @@
-import {URLs} from "../Front-End-Project/config.js"
+import {URLs} from "../config.js"
 // ^^ put own error handling server here ^^
 
-let body = document.querySelector('body')
+let newsContainer = document.querySelector('.container')
 var requestOptions = {
     method: 'GET',
     redirect: 'follow'
   };
 
-const newsUpdate = (callback) => {
+export const newsUpdate = (callback) => {
     fetch(URLs.news, requestOptions)
 .then(response => response.json())
 .then(result => callback(result))
@@ -18,7 +18,37 @@ const newsUpdate = (callback) => {
 newsUpdate(res => {
     res.articles.forEach (article => {
         console.log(article)
-        body.append(article.title)
+        let newsList = document.createElement('ol')
+        let newsItems = document.createElement('li')
+        let newsTitle = document.createElement('div')
+        newsTitle.classList = "article-title"
+        newsTitle.append(article.title)
+
+        let newsImg = document.createElement('img')
+        let imgDiv = document.createElement('div')
+        imgDiv.classList = 'center-img'
+        newsImg.src = article.urlToImage
+        newsImg.classList = 'news-img'
+        
+
+        let newsDescription = document.createElement('p')
+        newsDescription.classList = "description"
+        newsDescription.append(article.description)
+        
+        let newsAnchor = document.createElement('a')
+        newsAnchor.classList = "anchor"
+        newsAnchor.href = article.url
+        newsAnchor.innerText = "Read More"
+        newsAnchor.target = "_blank"
+        
+        newsItems.append(newsTitle)
+        newsItems.append(imgDiv)
+        imgDiv.append(newsImg)
+        // newsItems.append(newsImg)
+        newsItems.append(newsDescription)
+        newsItems.append(newsAnchor)
+        newsList.append(newsItems)
+        newsContainer.append(newsList) 
     })
     console.log('Look at me!')
 })
