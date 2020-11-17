@@ -8,21 +8,28 @@ const analogClock = document.querySelector(".analog-clock");
 const digitalClock = document.querySelector(".digital-clock");
 const refreshButton = document.querySelector(".refresh-quote");
 const windowsScreenSize = window.matchMedia("(min-width:766px)");
+const toggleLabel = document.querySelector(".toggle-label");
 
 setInterval(runClock, 1000);
 newQuote();
-
+if (windowsScreenSize.matches) {
+	backgroundImage();
+}
 toggleWhichClock.addEventListener("change", () => {
 	analogClock.classList.toggle("hidden");
 	digitalClock.classList.toggle("hidden");
+	if (analogClock.classList.contains("hidden")) {
+		toggleLabel.innerText = `DIGITAL`;
+	} else {
+		toggleLabel.innerText = `ANALOG`;
+	}
 });
 
 const handleScreenSize = (e) => {
 	if (e.matches) {
 		backgroundImage();
-	} else {
-		generateAnImage();
 	}
+	generateAnImage();
 };
 
 refreshButton.addEventListener("click", newQuote);
