@@ -1,12 +1,21 @@
+.headline-news {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 15px;
+    box-shadow: 20px 20px 45px 10px black;
+    margin-bottom: 1rem;
+}
+
 .news-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
     font-size: 2rem;
     margin-top: 25px;
     margin-bottom: 15px;
 }
 
-li {
+ol {
     list-style: none;
+    padding: 0
 }
 
 .article-title {
@@ -16,37 +25,22 @@ li {
     font-weight: bolder;
     font-size: 1.1rem;
     padding-top: 8px;
-    padding-right: 20px
+    padding-bottom: 8px;
+    /* padding-right: 20px */
 }
 
 .container {
     display: grid;
     justify-content: center;
     padding-right: 18px;
-    padding-left: 10px;
+    padding-left: 18px;
     opacity: 100%;
-}
-
-.anchor {
-    position: relative;
-    text-align: center;
-    display: grid;
-    margin-right: 35px
-}
-
-.description {
-    text-align: center;
-    margin-right: auto;
-    padding: 0px 35px 0px 10px;
-    font-style: oblique;
-    font-weight: normal;
 }
 
 .center-img {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-right: 25px
 }
 
 .news-img {
@@ -57,3 +51,22 @@ li {
     margin-top: 10px;
     border-bottom: 10px
 }
+
+.anchor {
+    position: relative;
+    margin-right: 0;
+    text-align: center;
+    display: grid;
+    /* margin-right: 35px */
+}
+
+.description {
+    text-align: center;
+    margin-right: auto;
+    padding: 0px 0px 0px 10px;
+    font-style: oblique;
+    font-weight: normal;
+}
+
+
+

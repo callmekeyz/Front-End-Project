@@ -20,6 +20,7 @@ main {
 	border: solid;
 	box-shadow: 20px 20px 45px 10px black;
 	border-radius: 15px;
+	margin-left: 0px;
 }
 .analog-clock {
 	width: 10rem;
@@ -167,7 +168,7 @@ input:checked + .slider:before {
 
 .headline-news {
 	background: grey;
-	opacity: 0.7;
+	opacity: 0.9;
 	grid-area: news;
 	overflow: auto;
 }
@@ -187,7 +188,6 @@ input:checked + .slider:before {
 	.clocks {
 		grid-column: 2/3;
 		grid-row: 1/2;
+		margin-left: 15px;
 	}
 }
-
-
