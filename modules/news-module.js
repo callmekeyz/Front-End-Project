@@ -1,7 +1,4 @@
 import { URLs } from "../config.js";
-// ^^ put own error handling server here ^^
-
-let newsContainer = document.querySelector(".container");
 
 var requestOptions = {
 	method: "GET",
@@ -15,37 +12,39 @@ export const newsUpdate = () => {
 		.catch((error) => console.log("error", error));
 };
 
-const placeNewsOnPage = (res) => {
-	res.articles.forEach((article) => {
-		let newsList = document.createElement("ol");
-		let newsItems = document.createElement("li");
-		let newsTitle = document.createElement("div");
-		newsTitle.classList = "article-title";
-		newsTitle.append(article.title);
+const placeNewsOnPage = res=>res.articles.forEach(makeArticle)
 
-		let newsImg = document.createElement("img");
-		let imgDiv = document.createElement("div");
-		imgDiv.classList = "center-img";
-		newsImg.src = article.urlToImage;
-		newsImg.classList = "news-img";
+const makeArticle = (article) => {
+	let newsContainer = document.querySelector(".container");
 
-		let newsDescription = document.createElement("p");
-		newsDescription.classList = "description";
-		newsDescription.append(article.description);
+    let newsList = document.createElement("ol");
+    let newsItems = document.createElement("li");
+	let newsTitle = document.createElement("div");
+	newsTitle.classList = "article-title";
+	
+	let imgDiv = document.createElement("div");
+	imgDiv.classList = "center-img";
+	
+	let newsImg = document.createElement("img");
+	newsImg.src = article.urlToImage;
+	newsImg.classList = "news-img";
 
-		let newsAnchor = document.createElement("a");
-		newsAnchor.classList = "anchor";
-		newsAnchor.href = article.url;
-		newsAnchor.innerText = "Read More";
-		newsAnchor.target = "_blank";
+	let newsDescription = document.createElement("p");
+	newsDescription.classList = "description";
 
-		newsItems.append(newsTitle);
-		newsItems.append(imgDiv);
-		imgDiv.append(newsImg);
-		// newsItems.append(newsImg)
-		newsItems.append(newsDescription);
-		newsItems.append(newsAnchor);
-		newsList.append(newsItems);
-		newsContainer.append(newsList);
-	});
+	let newsAnchor = document.createElement("a");
+	newsAnchor.classList = "anchor";
+	newsAnchor.href = article.url;
+	newsAnchor.innerText = "Read More";
+	newsAnchor.target = "_blank";
+
+	newsTitle.append(article.title);
+	newsDescription.append(article.description);
+	newsItems.append(newsTitle);
+	newsItems.append(imgDiv);
+	imgDiv.append(newsImg);
+	newsItems.append(newsDescription);
+	newsItems.append(newsAnchor);
+	newsList.append(newsItems);
+	newsContainer.append(newsList);
 };
