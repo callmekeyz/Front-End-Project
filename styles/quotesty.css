@@ -1,14 +1,27 @@
-.refresh-quote {
-	display: flex;
-	justify-content: center;
+.center-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
 }
+.refresh-quote{
+    border-radius: 50px;
+    background-color: black;
+    color: teal;
+    box-shadow: cornflowerblue;
+    
+}
+
+
 .quote-section {
 	font-size: 20px;
 	font-family: cursive;
 	border-radius: 10px;
 	border: solid black 1px;
 	padding: 10px;
-	box-shadow: 5px 5px 8px teal, 10px 10px 8px pink, 15px 15px 8px blue;
+    box-shadow: 5px 5px 8px teal, 10px 10px 8px pink, 15px 15px 8px blue;
+    margin: 0;
 }
 #quote-paragraph {
 	text-align: center;
@@ -18,5 +31,6 @@
 	text-decoration: underline;
 	font-size: 20px;
 	color: blue;
-	font-weight: bolder;
+    font-weight: bolder;
+    margin: 0;
 }
