@@ -3,13 +3,15 @@ import { URLs } from "./../config.js";
 
 const quoteSection = document.querySelector(".quote-section");
 //Using a function to make the AJAX call. Need this to hook up the refresh button
-export let newQuote = () => {
+export let newQuote = (e) => {
 	ajax(URLs.quote, (r) => {
 		let randomQuote = JSON.parse(r);
 		let currentQuote = randomQuote.quote.quoteText;
 		let currentQuoteAuthor = randomQuote.quote.quoteAuthor;
 		appendQuoteToDOM(currentQuote, currentQuoteAuthor); //pass the above variables thru the next function to update the DOM
 	});
+	document.querySelector(".refresh-quote").disabled=true 
+	setTimeout(()=>document.querySelector(".refresh-quote").disabled=false,20000)
 };
 
 //This function handles all the DOM heaving lifting
