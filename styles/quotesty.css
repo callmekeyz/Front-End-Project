@@ -21,7 +21,6 @@
 	border: solid black 1px;
 	padding: 10px;
     box-shadow: 5px 5px 8px teal, 10px 10px 8px pink, 15px 15px 8px blue;
-    margin: 0;
 }
 #quote-paragraph {
 	text-align: center;
@@ -32,5 +31,4 @@
 	font-size: 20px;
 	color: blue;
     font-weight: bolder;
-    margin: 0;
 }
