@@ -1,13 +1,10 @@
 main {
-	height: 100vh;
-	width: 100vw;
 	display: grid;
 	grid-template-areas:
 		"quotes"
 		"clocks"
 		"news";
-	gap: 10%;
-	padding: 5%;
+	padding: 1rem;
 }
 
 .clocks {
@@ -17,7 +14,6 @@ main {
 	grid-template-areas:
 		"clock"
 		"switch";
-	margin: 0;
 	padding: 0;
 	background: black;
 	opacity: 0.7;
@@ -56,11 +52,11 @@ main {
 	display: flex;
 	flex: 1 1 auto;
 }
+
 .toggle-label {
 	color: white;
 }
 .clock-face {
-	filter: contrast(5000%);
 	filter: brightness(1000%);
 }
 
@@ -176,10 +172,22 @@ input:checked + .slider:before {
 	overflow: auto;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 766px) {
 	main {
-		grid-template-areas:
-			"quotes"
-			"clocks news";
+		display: grid;
+		grid-template-columns: 66% 34%;
+	}
+	.quote-section {
+		grid-column: span 1;
+	}
+	.headline-news {
+		grid-row: 2/3;
+		grid-column: 1/span 2;
+	}
+	.clocks {
+		grid-column: 2/3;
+		grid-row: 1/2;
 	}
 }
+
+
