@@ -96,10 +96,10 @@ windowsScreenSize.addListener(handleScreenSize);
 We wanted our users to not have to use their data if they are on the mobile, so the first big of logic checks the window screen size before either calling the random image fetch or the background gradient function. The listener function similarly calls the gradient function when the screen is resized to a smaller dimension.
 
 ## Headline News
-- Brings the top news headlines in the US onto the dashboard
-- Will change throughout the day as new news breaks
-- Displays a brief summary of the article and a link to the full article
-- Using fetch, we are able to obtain key pieces of data and organize them to keep the user up to date on the day's top stories
+- Brings the top news headlines in the US onto the dashboard.
+- Will change throughout the day as new news breaks.
+- Displays a brief summary of the article and a link to the full article.
+- Using fetch, we are able to obtain key pieces of data and organize them to keep the user up to date on the day's top stories.
 ```javascript
 export const newsUpdate = () => {
 	fetch(URLs.news, requestOptions)
