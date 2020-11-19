@@ -33,6 +33,10 @@ And you can view the applied styles here:
 
 [Clock_Style](styles/clockstyles.css)
 
+Each clock was built from the inspiration from the following two links:
+[Analog](https://www.youtube.com/watch?v=Ki0XXrlKlHY)
+[Digital](https://www.codesdope.com/blog/article/how-to-create-a-digital-clock-using-javascript/)
+
 ## Gradient Background on Mobile
 
 Our design idea centered around creating a mobile first approach. While we wanted to have an actual image on the Glorp Dashboard, we felt that users on mobile might have data issues that need to be considered; we don't want people to have to use their data on an image.
