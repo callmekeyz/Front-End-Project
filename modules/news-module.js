@@ -13,7 +13,6 @@ export const newsUpdate = () => {
 };
 
 const placeNewsOnPage = (res) => {
-	if (res.ok) return;
 	res.articles.forEach(makeArticle);
 };
 
@@ -50,4 +49,4 @@ const makeArticle = (article) => {
 	newsItems.append(newsAnchor);
 	newsList.append(newsItems);
 	newsContainer.append(newsList);
-};
+}
