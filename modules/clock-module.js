@@ -27,10 +27,8 @@ export const runClock = () => {
 		hours = hours < 10 ? `0${hours}` : `${hours}`;
 		minutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
 		seconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
-		let displayCurrentTime = `${hours} : ${minutes} : ${seconds} ${am_pm}`;
-		digitalClock.innerText = displayCurrentTime;
 
-		if (hours >= 12) {
+		if (hours > 11) {
 			am_pm = "PM";
 		}
 
@@ -40,7 +38,10 @@ export const runClock = () => {
 
 		if (hours === 0) {
 			hours = 12;
+			am_pm = "AM";
 		}
+		let displayCurrentTime = `${hours} : ${minutes} : ${seconds} ${am_pm}`;
+		digitalClock.innerText = displayCurrentTime;
 	}
 };
 
