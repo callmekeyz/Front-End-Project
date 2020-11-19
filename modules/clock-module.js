@@ -13,7 +13,7 @@ export const runClock = () => {
 	let hours = now.getHours();
 	let am_pm = "AM";
 
-	if (!analogClock.classList.contains(".hidden")) {
+	if (!analogClock.classList.contains("hidden")) {
 		let secondsPercent = seconds / 60;
 		let minutesPercent = (secondsPercent + minutes) / 60;
 		let hoursPercent = (minutesPercent + hours) / 12;
@@ -23,19 +23,25 @@ export const runClock = () => {
 		rotateHands(hourHand, hoursPercent);
 	}
 
-	if (hours >= 12) {
-		hours -= 12;
-		am_pm = "PM";
+	if (!digitalClock.classList.contains("hidden")) {
+		hours = hours < 10 ? `0${hours}` : `${hours}`;
+		minutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
+		seconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+		let displayCurrentTime = `${hours} : ${minutes} : ${seconds} ${am_pm}`;
+		digitalClock.innerText = displayCurrentTime;
+
+		if (hours >= 12) {
+			am_pm = "PM";
+		}
+
+		if (hours > 12) {
+			hours -= 12;
+		}
+
+		if (hours === 0) {
+			hours = 12;
+		}
 	}
-	if (hours === 0) {
-		hours = 12;
-		am_pm = "AM";
-	}
-	hours = hours < 10 ? `0${hours}` : `${hours}`;
-	minutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
-	seconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
-	let displayCurrentTime = `${hours} : ${minutes} : ${seconds} ${am_pm}`;
-	digitalClock.innerText = displayCurrentTime;
 };
 
 const rotateHands = (element, rotate) => {

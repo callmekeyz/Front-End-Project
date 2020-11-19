@@ -183,7 +183,7 @@ input:checked + .slider:before {
 	}
 	.headline-news {
 		grid-row: 2/3;
-		grid-column: 1/span 2;
+		grid-column: 1 / span 2;
 	}
 	.clocks {
 		grid-column: 2/3;
