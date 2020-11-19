@@ -1,6 +1,6 @@
 import { URLs } from "../config.js";
 
-var requestOptions = {
+let requestOptions = {
 	method: "GET",
 	redirect: "follow",
 };
@@ -12,19 +12,22 @@ export const newsUpdate = () => {
 		.catch((error) => console.log("error", error));
 };
 
-const placeNewsOnPage = res=>res.articles.forEach(makeArticle)
+const placeNewsOnPage = (res) => {
+	if (!res.ok) return;
+	res.articles.forEach(makeArticle);
+};
 
 const makeArticle = (article) => {
 	let newsContainer = document.querySelector(".container");
 
-    let newsList = document.createElement("ol");
-    let newsItems = document.createElement("li");
+	let newsList = document.createElement("ol");
+	let newsItems = document.createElement("li");
 	let newsTitle = document.createElement("div");
 	newsTitle.classList = "article-title";
-	
+
 	let imgDiv = document.createElement("div");
 	imgDiv.classList = "center-img";
-	
+
 	let newsImg = document.createElement("img");
 	newsImg.src = article.urlToImage;
 	newsImg.classList = "news-img";
