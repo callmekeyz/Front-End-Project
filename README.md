@@ -4,11 +4,11 @@ We wanted our users to be able to see a more stylized time piece when they visit
 
 **ANALOG**
 
-![image](./MD_Images/analog.png)
+![image](./MD_Images/Analog.png)
 
 **DIGITAL**
 
-![image](./MD_Images/digital.png)
+![image](./MD_Images/Digital.png)
 
 These are running on pure Javascript using the Date object and its methods to supply the raw time data that is converted to seconds, minutes and hours respectively.
 
