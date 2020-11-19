@@ -11,7 +11,6 @@ export const runClock = () => {
 	let seconds = now.getSeconds();
 	let minutes = now.getMinutes();
 	let hours = now.getHours();
-	let am_pm = "AM";
 
 	if (!analogClock.classList.contains("hidden")) {
 		let secondsPercent = seconds / 60;
@@ -27,7 +26,7 @@ export const runClock = () => {
 		hours = hours < 10 ? `0${hours}` : `${hours}`;
 		minutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
 		seconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
-
+		let am_pm = "AM";
 		if (hours > 11) {
 			am_pm = "PM";
 		}
