@@ -38,5 +38,8 @@ const handleScreenSize = (e) => {
 	generateAnImage();
 };
 
-refreshButton.addEventListener("click", newQuote);
+refreshButton.addEventListener("click", () => {
+	refreshButton.disabled = true;
+	newQuote();
+});
 windowsScreenSize.addListener(handleScreenSize); //Want to only run the background image AJAX when the screen is at or above 766px. Below that and we only run the gradient background color function

@@ -7,7 +7,7 @@ let requestOptions = {
 };
 
 export const backgroundImage = () => {
-	let randomGeneratedImageID = Math.floor(Math.random() * 101);
+	let randomGeneratedImageID = Math.floor(Math.random() * 201);
 	fetch(`${URLs.backgroundImage}${randomGeneratedImageID}/info`, requestOptions)
 		.then((response) => response.json())
 		.then(
