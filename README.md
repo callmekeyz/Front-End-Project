@@ -93,3 +93,19 @@ windowsScreenSize.addListener(handleScreenSize);
 ```
 
 We wanted our users to not have to use their data if they are on the mobile, so the first big of logic checks the window screen size before either calling the random image fetch or the background gradient function. The listener function similarly calls the gradient function when the screen is resized to a smaller dimension.
+
+
+## Quote Section
+
+In this section we provide the user with the ability to access quotes at random. When the Button function is called it refreshes a new quote with the Author. We also added a function that provides a delay once the quote button is clicked. In some instances the author of a quote is "unknown" so we added a function to render unknown in place of the author.
+
+``` Javascript
+if (author != false) {
+		authorEL.append(author);
+		div.append(authorEL);
+	} else {
+		authorEL.append("-unknown");
+		div.append(authorEL);
+	}
+
+	
