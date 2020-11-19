@@ -112,3 +112,17 @@ const placeNewsOnPage = (res) => {
 	res.articles.forEach(makeArticle);
 };
 ```
+## Quote Section
+
+In this section we provide the user with the ability to access quotes at random. When the Button function is called it refreshes a new quote with the Author. We also added a function that provides a delay once the quote button is clicked. In some instances the author of a quote is "unknown" so we added a function to render unknown in place of the author.
+
+``` Javascript
+if (author != false) {
+		authorEL.append(author);
+		div.append(authorEL);
+	} else {
+		authorEL.append("-unknown");
+		div.append(authorEL);
+	}
+
+
