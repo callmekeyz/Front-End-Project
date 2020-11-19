@@ -1,24 +1,27 @@
-import { ajax } from "../modules/ajax-module.js";
 import { URLs } from "./../config.js";
-
+let requestOptions = {
+	method: "GET",
+	redirect: "follow",
+};
 const quoteSection = document.querySelector(".quote-section");
+const refreshButton = document.querySelector(".refresh-quote")
 //Using a function to make the AJAX call. Need this to hook up the refresh button
-export let newQuote = (e) => {
-	ajax(URLs.quote, (r) => {
-		let randomQuote = JSON.parse(r);
-		let currentQuote = randomQuote.quote.quoteText;
-		let currentQuoteAuthor = randomQuote.quote.quoteAuthor;
-		appendQuoteToDOM(currentQuote, currentQuoteAuthor); //pass the above variables thru the next function to update the DOM
-	});
-	document.querySelector(".refresh-quote").disabled=true 
-	setTimeout(()=>document.querySelector(".refresh-quote").disabled=false,20000)
+
+export const newQuote = () => {
+	fetch(URLs.quote, requestOptions)a
+		.then((response) => response.json())
+		.then((result) => {
+			let { quoteText, quoteAuthor } = result.quote;
+			appendQuoteToDOM(quoteText, quoteAuthor);
+		});
+	
 };
 
 //This function handles all the DOM heaving lifting
 const appendQuoteToDOM = (quote, author) => {
 	const paragraph = document.querySelector("#quote-paragraph");
 	const authorNameId = document.querySelector("#author-name");
-
+refreshButton.disabled=false
 	//This logic runs the display text of the quote that is generated. It returns out to stop running the code below since that only needs to be run the first time the AJAX is run
 	if (paragraph) {
 		paragraph.innerText = quote;
