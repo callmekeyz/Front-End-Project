@@ -5,6 +5,7 @@ main {
 		"clocks"
 		"news";
 	padding: 1rem;
+	min-height: 100vh;
 }
 
 .clocks {

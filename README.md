@@ -67,7 +67,7 @@ This simple API allows us to make a fetch call without having to rely on an API 
 
 ```javascript
 export const backgroundImage = () => {
-	let randomGeneratedImageID = Math.floor(Math.random() * 101);
+	let randomGeneratedImageID = Math.floor(Math.random() * 201);
 	fetch(`${URLs.backgroundImage}${randomGeneratedImageID}/info`, requestOptions)
 		.then((response) => response.json())
 		.then(
@@ -78,7 +78,7 @@ export const backgroundImage = () => {
 };
 ```
 
-Each time the function is run it randomly generates a number from 0-100 which is used in the fetch call to return that image to the app. The scrip that runs the main app function initially checks for a window size before allowing that function to be called that retrieves the end point data and displays the image.
+Each time the function is run it randomly generates a number from 0-200 which is used in the fetch call to return that image to the app. The scrip that runs the main app function initially checks for a window size before allowing that function to be called that retrieves the end point data and displays the image.
 
 ```javascript
 const windowsScreenSize = window.matchMedia("(min-width:766px)");
