@@ -13,7 +13,7 @@ export const newsUpdate = () => {
 };
 
 const placeNewsOnPage = (res) => {
-	if (!res.ok) return;
+	if (res.ok) return;
 	res.articles.forEach(makeArticle);
 };
 
