@@ -4,11 +4,7 @@ let requestOptions = {
 	redirect: "follow",
 };
 const quoteSection = document.querySelector(".quote-section");
-const refreshButton = document.querySelector(".refresh-quote");
-//Using a function to make the AJAX call. Need this to hook up the refresh button
-
 export const newQuote = () => {
-	fetch(URLs.quote, requestOptions)
 		.then((response) => response.json())
 		.then((result) => {
 			let { quoteText, quoteAuthor } = result.quote;
@@ -22,7 +18,7 @@ const appendQuoteToDOM = (quote, author) => {
 	const authorNameId = document.querySelector("#author-name");
 	refreshButton.disabled = false;
 
-	//This logic runs the display text of the quote that is generated. It returns out to stop running the code below since that only needs to be run the first time the AJAX is run
+s	//This logic runs the display text of the quote that is generated. It returns out to stop running the code below since that only needs to be run the first time the AJAX is run
 	if (paragraph) {
 		paragraph.innerText = quote;
 		authorNameId.innerText = author || "-unknown";
