@@ -1,4 +1,17 @@
 
+# The GLORP Dashboard
+
+![image](./MD_Images/glorp.png)
+
+Our product was created to give users a simple yet colorful experience to set as their homepage. It was build with a mobile first approach to better meet the needs of cell phone users over desktop users.
+
+But that's not to say that users should not user this as a desktop app, far from it. For users with large screen sizes, we've included an API endpoint that displays a different background image from the Lorem Picsum database to accommodate the needs of desktop users.
+
+Users are able to quickly start their device and checkout quick headlines and read an inspiring quote to start their day. Or check at lunch. Or when they feel they can get to their phone.
+
+The clocks are simple but aesthetically tasteful and are built from a mix of Javascript and CSS.
+
+
 ## The Clocks
 
 We wanted our users to be able to see a more stylized time piece when they visited our site. To accommodate them, we've added two different clocks with a toggle to switch between. The first is the analog time piece:
