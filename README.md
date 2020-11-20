@@ -1,4 +1,3 @@
-
 # The GLORP Dashboard
 
 ![image](./MD_Images/glorp.png)
@@ -10,7 +9,6 @@ But that's not to say that users should not user this as a desktop app, far from
 Users are able to quickly start their device and checkout quick headlines and read an inspiring quote to start their day. Or check at lunch. Or when they feel they can get to their phone.
 
 The clocks are simple but aesthetically tasteful and are built from a mix of Javascript and CSS.
-
 
 ## The Clocks
 
@@ -109,10 +107,12 @@ windowsScreenSize.addListener(handleScreenSize);
 We wanted our users to not have to use their data if they are on the mobile, so the first big of logic checks the window screen size before either calling the random image fetch or the background gradient function. The listener function similarly calls the gradient function when the screen is resized to a smaller dimension.
 
 ## Headline News
+
 - Brings the top news headlines in the US onto the dashboard.
 - Will change throughout the day as new news breaks.
 - Displays a brief summary of the article and a link to the full article.
 - Using fetch, we are able to obtain key pieces of data and organize them to keep the user up to date on the day's top stories.
+
 ```javascript
 export const newsUpdate = () => {
 	fetch(URLs.news, requestOptions)
@@ -125,11 +125,12 @@ const placeNewsOnPage = (res) => {
 	res.articles.forEach(makeArticle);
 };
 ```
+
 ## Quote Section
 
 In this section we provide the user with the ability to access quotes at random. When the Button function is called it refreshes a new quote with the Author. We also added a function that provides a delay once the quote button is clicked. In some instances the author of a quote is "unknown" so we added a function to render unknown in place of the author.
 
-``` Javascript
+```Javascript
 if (author != false) {
 		authorEL.append(author);
 		div.append(authorEL);
@@ -137,5 +138,4 @@ if (author != false) {
 		authorEL.append("-unknown");
 		div.append(authorEL);
 	}
-
-
+```
